@@ -27,7 +27,11 @@ login response or set it in your environment.
 | Variable | Where | Value |
 |---|---|---|
 | `baseUrl` | collection | `https://sla.nockhub.com` |
-| `stage` | your Postman environment | API Gateway stage (`dev` / `prod`) |
+| `stage` | `environments/dev` | `/dev` → `https://sla.nockhub.com/dev/member/...` |
+| `stage` | `environments/prod` | `""` → `https://sla.nockhub.com/member/...` |
+
+Pick **x10s dev** or **x10s prod** from Postman's environment dropdown. Careful
+on prod — POST/PATCH/DELETE hit live data.
 
 ## Before committing
 
