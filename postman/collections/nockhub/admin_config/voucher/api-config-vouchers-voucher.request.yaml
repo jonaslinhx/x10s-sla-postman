@@ -1,0 +1,16 @@
+$kind: http-request
+name: api/config/vouchers/voucher
+url: "{{baseUrl}}{{stage}}/admin/api/config/vouchers/voucher?voucher_id=2"
+method: GET
+queryParams:
+  voucher_id: "2"
+body:
+  type: text
+  content: ""
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+settings: {}
+order: 2000

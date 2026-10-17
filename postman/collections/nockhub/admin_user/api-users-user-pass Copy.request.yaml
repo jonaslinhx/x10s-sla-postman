@@ -1,0 +1,13 @@
+$kind: http-request
+name: api/users/user/pass Copy
+url: "{{baseUrl}}{{stage}}/admin/api/users/user/pass"
+method: DELETE
+body:
+  type: json
+  content: '{"locker_access_id": "7"}'
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 12000

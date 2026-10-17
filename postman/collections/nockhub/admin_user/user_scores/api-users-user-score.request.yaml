@@ -1,0 +1,20 @@
+$kind: http-request
+name: api/users/user/score
+url: "{{baseUrl}}{{stage}}/admin/api/users/user/score"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "user_id": 7457,
+        "category_id": 4,
+        "score": 12321,
+        "competition": "Biggest competition in the world",
+        "date": "2026-01-01"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 1000

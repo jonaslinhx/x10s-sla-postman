@@ -1,0 +1,19 @@
+$kind: http-request
+name: api/config/club
+url: "{{baseUrl}}{{stage}}/admin/api/config/club"
+method: POST
+body:
+  type: text
+  content: |-
+    {
+        "club_name": "test archery club",
+        "affiliate": true,
+        "remark": "test club remark",
+        "email": "123124@asb.com"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 3000

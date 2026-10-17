@@ -1,0 +1,25 @@
+$kind: http-request
+name: api/access
+url: "{{baseUrl}}{{stage}}/access/api/access"
+method: POST
+headers:
+  - key: ""
+    value: ""
+    disabled: true
+body:
+  type: json
+  content: |-
+    {
+        "booking_id": 2384,
+        "user_id": 3961,
+        "arrow_in": 4,
+        "comment": "postman sign in",
+        "rental_pkg_id": 4,
+        "rental_pkg_name": "Basic Compound Bow Set"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 4000

@@ -1,0 +1,16 @@
+$kind: http-request
+name: schedule/activity
+url: "{{baseUrl}}{{stage}}/admin/api/config/schedule/activity?current_date=2026-07-31"
+method: GET
+queryParams:
+  current_date: 2026-07-31
+body:
+  type: text
+  content: ""
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+settings: {}
+order: 1000

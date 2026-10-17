@@ -1,0 +1,46 @@
+$kind: http-request
+name: api/users/user
+url: "{{baseUrl}}{{stage}}/admin/api/users/user"
+method: PATCH
+body:
+  type: json
+  content: |-
+    {
+        "user_id": 1,
+        "patch_user": true,
+        "patch_secondary": true,
+        "patch_pass": true,
+        "user": {
+          "first_name": "Daniel",
+          "last_name": "Sze",
+          "username": "theSzeman",
+          "email": "mojojo@gmail.com",
+          "ext": 61,
+          "phone": "0498123012",
+          "gender": "M",
+          "handedness": "RH",
+          "dob": "1994-12-15",
+          "address": "new town street 81",
+          "zip": 123490,
+          "group_id": 2,
+          "style_ids": [1,3],
+          "club_id": 7,
+          "student_expiry_date": null,
+          "special_need": true,
+          "remark": "too handsome"
+        },
+        "secondary": {
+          "first_name": "Muhammad",
+          "last_name": "Rohit",
+          "ext": 62,
+          "phone": 91232211,
+          "relationship": "sibling"
+        },
+        "pass_expiry": "2025-06-01"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 10000

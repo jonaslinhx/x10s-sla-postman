@@ -1,0 +1,33 @@
+$kind: http-example
+name: api/booking/booking - reschedule new timeslot
+request:
+  url: "{{baseUrl}}/admin/api/bookings/booking"
+  method: PATCH
+  body:
+    type: json
+    content: |-
+      {
+          "booking_id": 1182,
+          "booking_date": "2025-08-20T15:24:11.657700",
+          "start_hour": 9,
+          "end_hour": 11,
+          "new_timeslot": {
+              "range_id": 1,
+              "num_instructors": 1
+          },
+          "activity_info": {
+              "num_session": 2,
+              "submit_code": "BAR00046",
+              "session_id": 227,
+              "reschedule_hold_bookings_in_session": true
+          },
+          "comment": "reschedule all course bookings on hold in same session to new timeslot",
+          "payment_mode": "sale_order"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 5000

@@ -1,0 +1,26 @@
+$kind: http-request
+name: api/users/user
+url: "{{baseUrl}}{{stage}}/admin/api/users/user?user_id=7457"
+method: GET
+queryParams:
+  - key: fields
+    value: bookings
+    disabled: true
+  - key: fields
+    value: certicates
+    disabled: true
+  - key: future_only
+    value: "True"
+    disabled: true
+    description: True/False
+  - key: fields
+    value: user
+    disabled: true
+  - key: user_id
+    value: "7457"
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 8000

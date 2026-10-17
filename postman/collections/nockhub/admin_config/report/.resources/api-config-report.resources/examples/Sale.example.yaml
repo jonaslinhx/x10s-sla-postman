@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/admin/api/config/report"
+  method: POST
+  body:
+    type: text
+    content: |-
+      {
+          "report": "sale",
+          "filter": {
+            "start_date": "2025-02-01",
+            "end_date": "2025-09-28",
+            "payment_platforms": ["pos"],
+            "payment_methods": null,
+            "pkg_types": ["activity"],
+            "pkg_ids": null
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 3000

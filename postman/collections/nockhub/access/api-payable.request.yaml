@@ -1,0 +1,14 @@
+$kind: http-request
+name: api/payable
+url: "{{baseUrl}}{{stage}}/access/api/payable?booking_id=1631&start_time=2025-01-21T20:00:00&end_time=2025-07-21T23:00:00"
+method: GET
+queryParams:
+  booking_id: "1631"
+  start_time: 2025-01-21T20:00:00
+  end_time: 2025-07-21T23:00:00
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 3000

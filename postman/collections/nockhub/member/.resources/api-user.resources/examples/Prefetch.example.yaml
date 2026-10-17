@@ -1,0 +1,41 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/user?user_id=3015&fields=user&fields=credits&fields=passes&fields=lockers&fields=bookings&fields=sales&fields=scores&fields=announcements&fields=alerts&fields=activities&fields=access&fields=activity_history"
+  method: GET
+  headers:
+    x-r-pass: "true"
+    x-r-credit: "true"
+  queryParams:
+    - key: user_id
+      value: "3015"
+    - key: fields
+      value: user
+    - key: fields
+      value: credits
+    - key: fields
+      value: passes
+    - key: fields
+      value: lockers
+    - key: fields
+      value: bookings
+    - key: fields
+      value: sales
+    - key: fields
+      value: scores
+    - key: fields
+      value: announcements
+    - key: fields
+      value: alerts
+    - key: fields
+      value: activities
+    - key: fields
+      value: access
+    - key: fields
+      value: activity_history
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

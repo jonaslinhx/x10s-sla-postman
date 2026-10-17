@@ -1,0 +1,17 @@
+$kind: http-request
+name: api/users/user/account
+url: "{{baseUrl}}{{stage}}/admin/api/users/user/account"
+method: PATCH
+body:
+  type: json
+  content: |-
+    {
+       "account_id": 1793,
+       "email": "jonaslimhx3@gmail.com"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 1000

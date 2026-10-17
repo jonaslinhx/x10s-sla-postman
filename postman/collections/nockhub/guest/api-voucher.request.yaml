@@ -1,0 +1,21 @@
+$kind: http-request
+name: api/voucher
+url: "{{baseUrl}}{{stage}}/guest/api/voucher"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "pkg_id": 10, // 10 to 15
+        "applied_codes": ["FSF8791XDL82"],
+        "voucher_code": "G456ZTH4LUVI",
+        "activity_date": "2025-02-28",
+        "location_id": 1, // 1 or 2
+        "num_pax": 4
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 3000

@@ -1,0 +1,86 @@
+$kind: http-request
+name: api/payment - course
+url: "{{baseUrl}}{{stage}}/guest/api/payment"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "activity_id": 5, // BAC
+        "location_id": 1,
+        "pkg_id": 14, // BAC
+        "applied_codes": [],
+        "num_child":2,
+        "num_adult":2,
+        "participants": [
+            {
+                "first_name": "Course",
+                "last_name": "child 4",
+                "dob": "2014-03-02",
+                "ext": "+65",
+                "phone": "12345678",
+                "email": "hongxiang_lim@hotmail.com"
+            },
+            {
+                "first_name": "Course",
+                "last_name": "child 3",
+                "dob": "2014-07-01",
+                "ext": "+65",
+                "phone": "12345678",
+                "email": "hongxiang_lim@hotmail.com"
+            },
+            {
+                "first_name": "Course",
+                "last_name": "adult 7",
+                "dob": "1994-08-01",
+                "ext": "+65",
+                "phone": "12345678",
+                "email": "hongxiang_lim@hotmail.com"
+            },
+            {
+                "first_name": "Course",
+                "last_name": "adult 5",
+                "dob": "1994-08-02",
+                "ext": "+65",
+                "phone": "12345678",
+                "email": "course@outlook.com"
+            }
+        ],
+        "sessions": [
+            {
+                "date": "2025-02-16",
+                "start_hour": 9,
+                "end_hour": 11,
+                "availability_info": {
+                    "range_id": 1,
+                    "ra_id": [121],
+                    "ra_by": 2,
+                    "ra_adjust": "lane",
+                    "ia_id": [121],
+                    "ia_by": 1
+                }
+            },
+            {
+                "date": "2025-02-18",
+                "start_hour": 13,
+                "end_hour": 15,
+                "availability_info": {
+                    "range_id": 2,
+                    "ra_id": [111],
+                    "ra_by": 2,
+                    "ra_adjust": "lane",
+                    "ia_id": [111],
+                    "ia_by": 1
+                }
+            }
+        ],
+        "amount": 180.23,
+        "payment_method": "card",
+        "payment_platform": "hitpay"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 6000

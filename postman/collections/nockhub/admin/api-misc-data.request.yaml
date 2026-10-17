@@ -1,0 +1,57 @@
+$kind: http-request
+name: api/misc/data
+url: "{{baseUrl}}{{stage}}/admin/api/misc/data?credit=true"
+method: GET
+queryParams:
+  - key: group
+    value: "true"
+    disabled: true
+  - key: club
+    value: "true"
+    disabled: true
+  - key: activityType
+    value: "true"
+    disabled: true
+    description: follow db table convention
+  - key: booking
+    value: "true"
+    disabled: true
+  - key: user
+    value: "true"
+    disabled: true
+  - key: activity
+    value: "true"
+    disabled: true
+  - key: rental
+    value: "true"
+    disabled: true
+  - key: instructor
+    value: "true"
+    disabled: true
+  - key: location
+    value: "true"
+    disabled: true
+  - key: package
+    value: "true"
+    disabled: true
+  - key: range
+    value: "true"
+    disabled: true
+  - key: voucher
+    value: "true"
+    disabled: true
+  - key: category
+    value: "true"
+    disabled: true
+  - key: credit
+    value: "true"
+body:
+  type: json
+  content: ""
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+settings: {}
+order: 3000

@@ -1,0 +1,43 @@
+$kind: http-request
+name: api/payment - experience
+url: "{{baseUrl}}{{stage}}/guest/api/payment"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "activity_id": 3,
+        "location_id": 1,
+        "pkg_id": 12, // 10 to 15
+        // "applied_codes": ["0K70RGH9VEP9","BDR6NMQX5J5T"],
+        "num_child": 3,
+        "num_adult": 3,
+        "participants": [{
+            "name": "Test Live",
+            "ext": "+65",
+            "phone": "91231234",
+            "email": "newattempt@outlook.com"
+        }],
+        "sessions": [{
+            "date": "2026-02-10",
+            "start_hour": 10,
+            "end_hour": 11,
+            "availability_info": {
+                "range_id": 1,
+                "ra_id": [131],
+                "ra_by": 3,
+                "ra_adjust": "lane",
+                "ia_id": [131],
+                "ia_by": 1
+            }
+        }],
+        "amount": 10.10,
+        "payment_method": "card",
+        "payment_platform": "hitpay"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 5000

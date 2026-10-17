@@ -1,0 +1,22 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/admin/api/misc/email"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "to_address": ["danielszezhiyao@gmail.com"],
+        "use_case": "5b_payment_confirmation_activity_experience_others",
+        "context": {
+          "sale_id": 135
+        },
+        "attachments": []
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 3000

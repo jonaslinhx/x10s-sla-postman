@@ -1,0 +1,16 @@
+$kind: http-request
+name: schedule/instructor
+url: "{{baseUrl}}{{stage}}/admin/api/config/schedule/instructor"
+method: DELETE
+body:
+  type: text
+  content: |-
+    {
+        "schedule_id": 19
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 4000

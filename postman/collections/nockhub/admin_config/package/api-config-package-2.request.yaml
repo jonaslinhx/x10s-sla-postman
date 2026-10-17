@@ -1,0 +1,34 @@
+$kind: http-request
+name: api/config/package
+url: "{{baseUrl}}{{stage}}/admin/api/config/package"
+method: PATCH
+body:
+  type: text
+  content: |-
+    {
+        "pkg_id": 79, 
+        "pkg_name": "test update package",
+        "pkg_type": "pass_credit",
+        "price_type": "regular",
+        "price": 30.739,
+        "remark": "test remark",
+        "info": {
+          "member_display": false,
+          "pass_": {
+            "pass_name": "test update pass name",
+            "location_ids": [1,2],
+            "days_valid": 14
+          },
+          "credit": {
+            "credit_id": 3,
+            "quantity": 4,
+            "days_valid": 14
+          }
+        }
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 3000

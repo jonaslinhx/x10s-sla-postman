@@ -1,0 +1,20 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/admin/api/config/schedule/instructor"
+  method: PATCH
+  body:
+    type: text
+    content: |-
+      {
+          "schedule_id": 23,
+          "patch_schedule": true,
+          "days_of_week": [1, 5],
+          "remark": "Updated instructor default schedule"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

@@ -1,0 +1,19 @@
+$kind: http-example
+name: api/bookings/booking - delete
+request:
+  url: "{{baseUrl}}/admin/api/bookings/booking"
+  method: PATCH
+  body:
+    type: json
+    content: |-
+      {
+          "booking_id": 603,
+          "future_status": "delete"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 2000

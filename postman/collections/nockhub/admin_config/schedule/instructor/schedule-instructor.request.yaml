@@ -1,0 +1,18 @@
+$kind: http-request
+name: schedule/instructor
+url: "{{baseUrl}}{{stage}}/admin/api/config/schedule/instructor"
+method: GET
+queryParams:
+  - key: current_date
+    value: 2025-12-31
+    disabled: true
+body:
+  type: text
+  content: ""
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+settings: {}
+order: 1000

@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/access"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "access_id": 5,
+          "arrow_out": 3015,
+          "arrow_out": 36,
+          "comment": "postman signing out",
+          "booking": [
+              {
+                  "booking_id": 294,
+                  "activity_id": 7,
+                  "range_id": 1,
+                  "date": "2026-08-21",
+                  "start_hour": 19,
+                  "end_hour": 21,
+                  "rental_pkg_id": 1
+              },
+              {
+                  "booking_id": null,
+                  "range_id": null,
+                  "date": "2026-08-21",
+                  "rental_pkg_id": null,
+                  "start_hour": 21,
+                  "end_hour": 26,
+                  "activity_id": 7
+              }
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 3000

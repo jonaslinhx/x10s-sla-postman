@@ -1,0 +1,13 @@
+$kind: http-request
+name: api/overview
+url: "{{baseUrl}}{{stage}}/admin/api/overview?range_id=1&range_date=2026-08-26"
+method: GET
+queryParams:
+  range_id: "1"
+  range_date: 2026-08-26
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 1000

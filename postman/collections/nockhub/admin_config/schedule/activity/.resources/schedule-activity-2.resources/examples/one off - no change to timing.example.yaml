@@ -1,0 +1,21 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/admin/api/config/schedule/activity"
+  method: PATCH
+  body:
+    type: text
+    content: |-
+      {
+          "schedule_id": 22,
+          "patch_schedule": true,
+          "start_date": "2025-07-01",
+          "end_date": "2025-07-02",
+          "remark": "Updated one_off schedule"
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 3000

@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}{{stage}}/access/api?username=TESTUSER&phone=91231234&location_id=2"
+method: GET
+queryParams:
+  - key: username
+    value: TESTUSER
+  - key: phone
+    value: "91231234"
+  - key: location_id
+    value: "2"
+  - key: access_code
+    value: ICCFQ
+    disabled: true
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 2000

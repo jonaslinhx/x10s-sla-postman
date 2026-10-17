@@ -1,0 +1,19 @@
+$kind: http-request
+name: api/auth/logout
+url: "{{baseUrl}}{{stage}}/admin/api/auth/logout?portal=admin"
+method: GET
+headers:
+  - key: ""
+    value: ""
+    disabled: true
+queryParams:
+  - key: portal
+    value: admin
+    description: member or admin
+body:
+  type: json
+  content: ""
+auth:
+  type: noauth
+settings: {}
+order: 6000

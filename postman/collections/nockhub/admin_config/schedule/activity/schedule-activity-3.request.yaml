@@ -1,0 +1,13 @@
+$kind: http-request
+name: schedule/activity
+url: "{{baseUrl}}{{stage}}/admin/api/config/schedule/activity"
+method: DELETE
+body:
+  type: text
+  content: '{ "schedule_id": 22}'
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 4000

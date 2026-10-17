@@ -1,0 +1,13 @@
+$kind: http-request
+name: api/timetable
+url: "{{baseUrl}}{{stage}}/admin/api/timetable?range_id=1&range_date=2026-05-30"
+method: GET
+queryParams:
+  range_id: "1"
+  range_date: 2026-05-30
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 4000

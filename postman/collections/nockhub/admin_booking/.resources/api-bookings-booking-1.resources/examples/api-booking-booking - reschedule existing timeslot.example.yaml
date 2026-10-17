@@ -1,0 +1,33 @@
+$kind: http-example
+name: api/booking/booking - reschedule existing timeslot
+request:
+  url: "{{baseUrl}}/admin/api/bookings/booking"
+  method: PATCH
+  body:
+    type: json
+    content: |-
+      {
+          "booking_id": 603,
+          "booking_date": "2025-08-20T15:24:11.657700",
+          "start_hour": 10,
+          "end_hour": 12,
+          "activity_info": {
+              "credit_id": 1
+          },
+          "availability_info": {
+              "ra_id": [],
+              "ra_by": 0,
+              "aa_id": [1,2],
+              "aa_by": 1,
+              "aa_excess": null
+          },
+          "comment": "reschedule lesson to another existing timeslot",
+          "payment_mode": "credit"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 4000

@@ -1,0 +1,32 @@
+$kind: http-request
+name: api/config/activity
+url: "{{baseUrl}}{{stage}}/admin/api/config/activity"
+method: PATCH
+body:
+  type: json
+  content: |-
+    {
+        "activity_id": 26,
+        "activity_name": "test BAC",
+        "style_id": 3,
+        "description": "first line\nsecond line\nthird line",
+        "on_guest": true,
+        "on_member": null,
+        "info": {
+          "max_pax": 7,
+          "min_age": 3,
+          "min_adult_age": 12,
+          "location_ids": [1,2],
+          "num_child_sess": 1,
+          "child_sess_dur": 1,
+          "num_adult_sess": 1,
+          "adult_sess_dur": 1
+        },
+        "remark": "changing"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 3000

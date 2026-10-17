@@ -2,6 +2,8 @@
 workspace:
   id: 2744d549-2d56-4e88-a5ce-09b0d97e6c90
 
-localResources:
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
   collections:
-    - ../postman.json
+    ../postman/collections/nockhub: 6c0faf41-96d4-430f-8753-d172275f647f

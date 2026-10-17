@@ -1,0 +1,25 @@
+$kind: http-request
+name: api/config/package
+url: "{{baseUrl}}{{stage}}/admin/api/config/package?pkg_type=pass_credit&pkg_id=77"
+method: GET
+queryParams:
+  - key: pkg_type
+    value: pass_credit
+  - key: price_type
+    value: student
+    disabled: true
+  - key: price_type
+    value: regular
+    disabled: true
+  - key: pkg_id
+    value: "77"
+body:
+  type: text
+  content: ""
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+settings: {}
+order: 1000

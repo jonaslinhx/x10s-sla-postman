@@ -1,0 +1,68 @@
+$kind: http-request
+name: access/payable
+url: "{{baseUrl}}{{stage}}/member/api/access/payable"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "access": {
+            "access_id": 6,
+            "location_id": 1
+        },
+        "has_active_pass": false,
+        "user_practice_price_type": "regular",
+        "booking": [
+            {
+                "booking_id": 316,
+                "activity_id": 7,
+                "range_id": 1,
+                "date": "2026-08-29",
+                "start_hour": 10,
+                "end_hour": 12,
+                "rental_pkg_id": 2
+            },
+            {
+                "booking_id": null,
+                "range_id": null,
+                "date": "2026-08-29",
+                "rental_pkg_id": null,
+                "start_hour": 12,
+                "end_hour": 13,
+                "activity_id": 7
+            },
+            {
+                "booking_id": 318,
+                "activity_id": 7,
+                "range_id": 1,
+                "date": "2026-08-29",
+                "start_hour": 13,
+                "end_hour": 15,
+                "rental_pkg_id": 5
+            },
+            {
+                "booking_id": null,
+                "range_id": null,
+                "date": "2026-08-29",
+                "rental_pkg_id": null,
+                "start_hour": 15,
+                "end_hour": 16,
+                "activity_id": 7
+            },
+            {
+                "booking_id": 317,
+                "activity_id": 8,
+                "range_id": 1,
+                "date": "2026-08-29",
+                "start_hour": 16,
+                "end_hour": 18,
+                "rental_pkg_id": 3
+            }
+        ]
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 7000

@@ -1,0 +1,21 @@
+$kind: http-request
+name: schedule/activity
+url: "{{baseUrl}}{{stage}}/admin/api/config/schedule/activity"
+method: PATCH
+body:
+  type: text
+  content: |-
+    {
+        "schedule_id": 2,
+        "patch_schedule": True,
+        "schedule_type": "default",
+        "days_of_week": [7],  # Monday, Wednesday
+        "remark": "Updated default schedule",
+      }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+examples: ./.resources/schedule-activity-2.resources/examples
+order: 3000

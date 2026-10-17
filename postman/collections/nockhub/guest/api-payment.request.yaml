@@ -1,0 +1,13 @@
+$kind: http-request
+name: api/payment
+url: "{{baseUrl}}{{stage}}/guest/api/payment?reserve_id=1&payment_id=4"
+method: GET
+queryParams:
+  reserve_id: "1"
+  payment_id: "4"
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 4000

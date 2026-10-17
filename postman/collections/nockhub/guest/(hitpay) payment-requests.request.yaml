@@ -1,0 +1,15 @@
+$kind: http-request
+url: https://api.sandbox.hit-pay.com/v1/payment-requests/:request_id
+method: GET
+queryParams:
+  - key: ""
+    value: null
+    disabled: true
+pathVariables:
+  request_id: a0f5f4ff-fda0-472e-bce1-23782c48727b
+auth:
+  type: apikey
+  credentials:
+    key: X-BUSINESS-API-KEY
+    value: "{{vault:hitpay-sandbox-api-key}}"
+order: 9000

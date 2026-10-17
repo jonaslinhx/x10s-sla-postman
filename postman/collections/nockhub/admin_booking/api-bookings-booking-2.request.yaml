@@ -1,0 +1,71 @@
+$kind: http-request
+name: api/bookings/booking
+url: "{{baseUrl}}{{stage}}/admin/api/booking"
+method: POST
+body:
+  type: json
+  content: |-
+    // {
+    //     "booking_mode": "online",
+    //     "booking_code": "BK",
+    //     "user_id": 1,
+    //     "activity_id": 8,
+    //     "date": "2025-07-11T15:24:11.657700",
+    //     "start_hour": 16,
+    //     "end_hour": 18,
+    //     "activity_info": {
+    //         "rental_pkg_id": 1,
+    //         "rental_pkg_name": "No Rental Required",
+    //         "credit_id": 1
+    //     },
+    //     "availability_info": {
+    //         "range_id": 1,
+    //         "ra_adjust": "lane",
+    //         "ra_id": [704, 705],
+    //         "ra_by": 0,
+    //         "ia_id": [],
+    //         "ia_by": 0,
+    //         "aa_id": [47],
+    //         "aa_by": 1,
+    //         "aa_excess": null
+    //     }
+
+    {
+        "booking_mode":"online",
+        "booking_code":"BK",
+        "user_id":2,
+        "activity_id":11,
+        "date":"2025-07-19T12:21:58.410",
+        "start_hour":12,
+        "end_hour":14,
+        "activity_info":{
+            "rental_pkg_id":1,
+            "rental_pkg_name":"No Rental Required",
+            "handedness":null,
+            "bow_poundage":null,
+            "bow_length":null,
+            "stabilizer":null,
+            "credit_id":2
+            },
+        "new_timeslot":null,
+        "availability_info":{
+            "range_id":2,
+            "ra_adjust":"lane",
+            "ra_id":[1108,1109],
+            "ra_by":0,
+            "ia_id":[],
+            "ia_by":0,
+            "aa_id":[81],
+            "aa_by":1,
+            "aa_excess":null
+            },
+        "comment":null,
+        "payment_mode":"credit"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+examples: ./.resources/api-bookings-booking-2.resources/examples
+order: 9000

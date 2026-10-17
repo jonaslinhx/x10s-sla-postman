@@ -1,0 +1,18 @@
+$kind: http-request
+name: api/bookings/booking
+url: "{{baseUrl}}{{stage}}/admin/api/bookings/booking"
+method: PATCH
+body:
+  type: json
+  content: |-
+    {
+        "booking_id": 603,
+        "future_status": "hold" // delete
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+examples: ./.resources/api-bookings-booking-1.resources/examples
+order: 8000

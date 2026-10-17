@@ -1,0 +1,23 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/admin/api/auth/login"
+  method: POST
+  headers:
+    - key: ""
+      value: ""
+      disabled: true
+  body:
+    type: json
+    content: |-
+      {
+          "portal": "member",
+          "email": "<email>",
+          "password": "<password>"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

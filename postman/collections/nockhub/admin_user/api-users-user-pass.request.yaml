@@ -1,0 +1,20 @@
+$kind: http-request
+name: api/users/user/pass
+url: "{{baseUrl}}{{stage}}/admin/api/users/user/pass"
+method: PATCH
+body:
+  type: json
+  content: |-
+    {
+      "range_pass_id": 403,
+      "locker_access_id": null,
+      "start_on": "2026-07-11",
+      "expire_on": "2026-08-10",
+      "remark": "extended by 2 weeks per member request"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 11000

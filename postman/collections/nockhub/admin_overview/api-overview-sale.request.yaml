@@ -1,0 +1,40 @@
+$kind: http-request
+name: api/overview/sale
+url: "{{baseUrl}}{{stage}}/admin/api/overview/sale"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "access_id": 1,
+        "activity" :{
+          "sale_ref_prefix": "WC",
+          "create_by": "Westcoast",
+          "pkg_id": 16,
+          "unit_price": 35.00,
+          "unit": 1,
+          "discount_type": "voucher",
+          "final_amount": 30.00,
+          "sale_voucher": [
+            {"voucher_id": 2}
+          ]
+        },
+            "rental": {
+          "sale_ref_prefix": "WC",
+          "create_by": "Westcoast",
+          "pkg_id": 2,
+          "unit_price": 10.00,
+          "unit": 1,
+          "discount_type": "fixed",
+          "discount_value": 0.00,
+          "final_amount": 10.00,
+          "sale_voucher": []
+        }
+
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 2000

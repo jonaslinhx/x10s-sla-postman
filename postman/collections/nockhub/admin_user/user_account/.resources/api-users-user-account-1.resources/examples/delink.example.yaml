@@ -1,0 +1,19 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/admin/api/users/user/account"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "mode": "delink",
+          "user_id": 1,
+          "email": "jonaslimhx@gmail.com"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

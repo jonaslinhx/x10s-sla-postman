@@ -1,0 +1,13 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/admin/api/bookings/booking?booking_id=700"
+  method: GET
+  queryParams:
+    booking_id: "700"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

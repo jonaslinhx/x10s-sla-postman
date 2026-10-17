@@ -1,0 +1,21 @@
+$kind: http-request
+name: api/users
+url: "{{baseUrl}}{{stage}}/admin/api/users?group_ids=1&group_ids=2"
+method: GET
+queryParams:
+  - key: style_ids
+    value: "1"
+    disabled: true
+  - key: style_ids
+    value: "2"
+    disabled: true
+  - key: group_ids
+    value: "1"
+  - key: group_ids
+    value: "2"
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 6000

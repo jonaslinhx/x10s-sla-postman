@@ -1,0 +1,21 @@
+$kind: http-request
+name: api/misc/email
+url: "{{baseUrl}}{{stage}}/admin/api/misc/email"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "use_case": "1_payment_confirmation_course",
+      "to_address": ["jonaslimhx@gmail.com"],
+      "context": {
+        "sale_id": 1
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+examples: ./.resources/api-misc-email.resources/examples
+order: 1000

@@ -1,0 +1,21 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/user?user_id=7470&fields=credit_transactions&fields=credits"
+  method: GET
+  headers:
+    x-r-pass: "true"
+    x-r-credit: "true"
+  queryParams:
+    - key: user_id
+      value: "7470"
+    - key: fields
+      value: credit_transactions
+    - key: fields
+      value: credits
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 2000

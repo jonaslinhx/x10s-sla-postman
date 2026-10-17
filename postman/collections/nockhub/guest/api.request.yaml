@@ -1,0 +1,9 @@
+$kind: http-request
+url: "{{baseUrl}}{{stage}}/guest/api"
+method: GET
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 2000

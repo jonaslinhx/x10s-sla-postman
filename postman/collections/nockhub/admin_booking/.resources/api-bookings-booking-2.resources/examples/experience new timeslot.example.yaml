@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/admin/api/bookings/booking"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "booing_mode": "direct",
+          "booking_code": "EV",
+          "comment": "postman experience existing timeslot",
+          "payment_mode": "sale_order",
+          "user_id": 20,
+          "activity_id": 1,
+          "date": "2025-02-15",
+          "start_hour": 15,
+          "end_hour": 18,
+          "availability_info": null,
+          "new_timeslot": {
+              "num_instructors": 2,
+              "range_id": 4
+          },
+          "activity_info": {
+              "num_adult": 8,
+              "num_child": 2,
+              "name": "james",
+              "email": "landy@gmail.com",
+              "phone": "123819203"
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 4000

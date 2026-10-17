@@ -1,0 +1,18 @@
+$kind: http-request
+name: api/access
+url: "{{baseUrl}}{{stage}}/member/api/access"
+method: PATCH
+body:
+  type: json
+  content: |-
+    {
+        "access_id": 5,
+        "arrow_out": 7,
+        "comment": "admin overview edit signout comment and arrow out"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 6000

@@ -1,0 +1,9 @@
+$kind: http-request
+name: api/auth/refresh
+url: "{{baseUrl}}{{stage}}/admin/api/auth/refresh?portal=member"
+method: GET
+queryParams:
+  - key: portal
+    value: member
+    description: member or admin
+order: 7000

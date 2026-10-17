@@ -1,0 +1,21 @@
+$kind: http-request
+name: api/access
+url: "{{baseUrl}}{{stage}}/member/api/access"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "user_id": 3015,
+        "comment": "post man testing post access",
+        "arrow_in": 6,
+        "arrow_out": 6,
+        "booking_id": 4
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+examples: ./.resources/api-access-1.resources/examples
+order: 5000

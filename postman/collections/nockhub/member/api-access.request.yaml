@@ -1,0 +1,22 @@
+$kind: http-request
+name: api/access
+url: "{{baseUrl}}{{stage}}/member/api/access?user_id=3015&access_id=2"
+method: GET
+queryParams:
+  - key: user_id
+    value: "3015"
+  - key: location_id
+    value: "1"
+    disabled: true
+  - key: access_id
+    value: "2"
+  - key: access_code
+    value: WEWFEC
+    disabled: true
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+examples: ./.resources/api-access.resources/examples
+order: 4000

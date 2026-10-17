@@ -1,0 +1,21 @@
+$kind: http-request
+name: api/access/undo-signout
+url: "{{baseUrl}}{{stage}}/access/api/access/undo-signout"
+method: POST
+headers:
+  - key: ""
+    value: ""
+    disabled: true
+body:
+  type: json
+  content: |-
+    {
+        "user_id": 3015,
+        "booking_id": 580
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 5000

@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/admin/api/config/schedule/activity"
+  method: PATCH
+  body:
+    type: text
+    content: |-
+      {
+          "schedule_id": 21,
+          "patch_schedule": true,
+          "days_of_week": [1, 5],
+          "remark": "Updated default schedule and timings",
+          "patch_timing": true,
+          "activity_timing": [
+            {
+              "range_id": 4,
+              "start_hour": 9,
+              "end_hour": 11,
+              "num_lanes_block": 1,
+              "num_slots": 6
+            },
+            {
+              "range_id": 4,
+              "start_hour": 13,
+              "end_hour": 15,
+              "num_lanes_block": 2,
+              "num_slots": 8
+            }
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 2000

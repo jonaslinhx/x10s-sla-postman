@@ -1,0 +1,20 @@
+$kind: http-request
+name: api/users/user/account
+url: "{{baseUrl}}{{stage}}/admin/api/users/user/account"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "mode": "delink", // "link"
+        "acount_id": 1,
+        "user_id": 1,
+        "email": "jonaslimhx@gmail.com"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+examples: ./.resources/api-users-user-account-1.resources/examples
+order: 2000

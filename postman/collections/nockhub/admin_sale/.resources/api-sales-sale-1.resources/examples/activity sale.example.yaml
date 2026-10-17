@@ -1,0 +1,43 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/admin/api/sales/sale"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "sale_ref_prefix": "SY",
+        "create_by": "Westcoast",
+        "payment_method": "paynow_online",
+        "payment_platform": "hitpay",
+        "pkg_id": 12,
+        "payer_info": {
+          "payer_type": "existing",
+          "user_id": 1
+        },
+        "remark": "test post sale dialog",
+        "unit_price": 50.0,
+        "unit": 2,
+        "discount_type": "voucher",
+        "final_amount": 80.123,
+        "sale_booking": [
+          {
+            "booking_id": 243,
+            "booking_code": "BKWC00259BAR",
+            "activity_name": "activity name 123"
+          },
+          {
+            "booking_id": 242,
+            "booking_code": "BKWC00258BAR",
+            "activity_name": "activity name 456"
+          }
+        ],
+        "sale_voucher": [9, 10]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

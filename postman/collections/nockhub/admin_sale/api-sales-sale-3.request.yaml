@@ -1,0 +1,13 @@
+$kind: http-request
+name: api/sales/sale
+url: "{{baseUrl}}{{stage}}/admin/api/sales/sale"
+method: DELETE
+body:
+  type: json
+  content: '{"sale_id": 693}'
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 5000

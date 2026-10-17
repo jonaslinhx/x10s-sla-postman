@@ -1,0 +1,19 @@
+$kind: http-request
+name: api/misc/cron
+url: "{{baseUrl}}{{stage}}/admin/api/misc/cron"
+method: POST
+body:
+  type: json
+  content: |-
+    // {"usecase": "refresh_activity_availabilities"}
+    {"usecase": "refresh_instructor_availabilities"}
+    // {"usecase": "pass_expiry_email"}
+    // {"usecase": "delete_expired_pass"}
+    // {"usecase": "credits_expiry_email"}
+    // {"usecase": "deduct_expired_credits"}
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 2000

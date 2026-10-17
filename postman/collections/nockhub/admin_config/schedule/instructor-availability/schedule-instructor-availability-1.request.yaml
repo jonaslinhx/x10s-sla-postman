@@ -1,0 +1,17 @@
+$kind: http-request
+name: schedule/instructor/availability
+url: "{{baseUrl}}{{stage}}/admin/api/config/schedule/instructor/availability"
+method: PATCH
+body:
+  type: text
+  content: |-
+    {
+        "availability_id": 5789,
+        "available_instructors": 11
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 2000

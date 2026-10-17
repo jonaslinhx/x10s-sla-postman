@@ -1,0 +1,20 @@
+$kind: http-request
+name: api/users/user/credit
+url: "{{baseUrl}}{{stage}}/admin/api/users/user/credit"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "user_ids": [11],
+        "credit_id": 1,
+        "reason": "admin",
+        "amount": 3,
+        "remark": "test credit transaction"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 1000

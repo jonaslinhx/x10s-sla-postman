@@ -1,0 +1,27 @@
+$kind: http-request
+name: api/misc/auth (login)
+url: "{{baseUrl}}{{stage}}/admin/api/misc/auth"
+method: POST
+headers:
+  - key: ""
+    value: ""
+    disabled: true
+queryParams:
+  - key: access_key
+    value: " {{accessKey}}"
+    disabled: true
+    description: URL-Safe Base 64. Normal base64 turns '+' to ' ' Disable to authenticate JWT
+body:
+  type: json
+  content: |-
+    {
+        // "access_key": "{{accessKey}}"
+        "access_key": "{{accessKey}}"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+examples: ./.resources/api-misc-auth (login).resources/examples
+order: 4000

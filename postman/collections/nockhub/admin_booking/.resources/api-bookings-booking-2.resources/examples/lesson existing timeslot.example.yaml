@@ -1,0 +1,42 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/admin/api/bookings/booking"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "booking_mode":"online",
+          "booking_code":"BK",
+          "comment":"postman lesson existing timeslot",
+          "payment_mode":"credit",
+          "user_id":6,
+          "activity_id":11,
+          "date":"2025-09-19T12:21:58.410",
+          "start_hour":12,
+          "end_hour":14,
+          "activity_info":{
+              "credit_id":2,
+              "rental_pkg_id":1,
+              "rental_pkg_name":"No Rental Required"
+              },
+          "new_timeslot":null,
+          "availability_info":{
+              "range_id":2,
+              "ra_adjust":"lane",
+              "ra_id":[1108,1109],
+              "ra_by":0,
+              "ia_id":[],
+              "ia_by":0,
+              "aa_id":[81],
+              "aa_by":1,
+              "aa_excess":null
+              }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 5000

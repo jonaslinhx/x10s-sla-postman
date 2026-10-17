@@ -1,0 +1,49 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/admin/api/sales/sale"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "sale_ref_prefix": "SY",
+        "create_by": "Westcoast",
+        "payment_method": "paynow_online",
+        "payment_platform": "hitpay",
+        "pkg_id": 83,
+        "payer_info": {
+          "payer_type": "existing",
+          "user_id": 7469
+        },
+        "remark": "test post sale dialog 2",
+        "unit_price": 50.0,
+        "unit": 3,
+        "discount_type": "voucher",
+        "final_amount": 80.12,
+        "sale_booking": [],
+        "range_pass": {
+          "pass_name": "another fake passs name",
+          "days_valid": 20,
+          "pass_start_date": "2026-07-20",
+          "location_ids": [2]
+        },
+        "credit": {
+          "credit_id": 1,
+          "quantity": 3,
+          "days_valid": 50,
+          "credit_start_date": "2027-07-23"
+        },
+        "locker": {
+          "locker_name": "fake locker name",
+          "days_valid": 20,
+          "locker_start_date": "2026-07-10",
+          "location_ids": [2]
+        }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 2000

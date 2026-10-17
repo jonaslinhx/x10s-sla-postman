@@ -1,0 +1,20 @@
+$kind: http-request
+name: api/config/club
+url: "{{baseUrl}}{{stage}}/admin/api/config/club"
+method: PATCH
+body:
+  type: text
+  content: |-
+    {
+        "club_id": 35,
+        "club_name": "updated club name",
+        "affiliate": false,
+        "remark": "test update remark",
+        "email": "updatedemail@email.com"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 4000

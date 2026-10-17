@@ -1,0 +1,42 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/admin/api/bookings/booking"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "booing_mode": "direct",
+          "booking_code": "EV",
+          "comment": "postman course new timeslot",
+          "payment_mode": "sale_order",
+          "user_id": 10,
+          "activity_id": 4, // BAR
+          "location_id": 1,
+          "add_user_ids": [20,30, 40],
+          "sessions": [
+              {
+              "date": "2025-09-25", "start_hour": 10, "end_hour": 11, 
+              "new_timeslot":  {"num_instructors": 1, "range_id": 2}
+              },
+              {
+              "date":"2025-09-27", "start_hour": 11, "end_hour": 12, 
+              "new_timeslot": {"num_instructors" : 1, "range_id": 3}
+              },
+              {
+              "date": "2025-09-29", "start_hour": 12, "end_hour": 13, 
+              "new_timeslot": {"num_instructors": 1, "range_id": 1}
+              },
+              {
+              "date": "2025-09-01", "start_hour": 13, "end_hour": 14, 
+              "new_timeslot": {"num_instructors": 1, "range_id": 1}
+              }
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 2000

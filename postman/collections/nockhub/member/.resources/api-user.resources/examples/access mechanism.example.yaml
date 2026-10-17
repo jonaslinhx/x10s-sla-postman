@@ -1,0 +1,16 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/user?fields=access"
+  method: GET
+  headers:
+    x-r-pass: "true"
+    x-r-credit: "true"
+  queryParams:
+    fields: access
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 3000

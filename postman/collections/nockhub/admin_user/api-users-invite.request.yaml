@@ -1,0 +1,21 @@
+$kind: http-request
+name: api/users/invite
+url: "{{baseUrl}}{{stage}}/admin/api/users/invite"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "group_id": 1,
+        "style_ids": [],
+        "club_id": null,
+        "student_expiry_date": "2027-01-01",
+        "special_need": false,
+        "remark": null
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 7000

@@ -1,0 +1,19 @@
+$kind: http-request
+name: api/users/user/cert
+url: "{{baseUrl}}{{stage}}/admin/api/users/user/cert?cert_id"
+method: GET
+queryParams:
+  cert_id: null
+body:
+  type: json
+  content: |-
+    {
+       
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+settings: {}
+order: 1000

@@ -1,0 +1,13 @@
+$kind: http-request
+name: api (to be deprecated?)
+url: "{{baseUrl}}{{stage}}/member/api?email=test_ba@gmail.com&phone=123"
+method: GET
+queryParams:
+  email: test_ba@gmail.com
+  phone: "123"
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 2000

@@ -1,0 +1,45 @@
+$kind: http-request
+name: api/sales/sale
+url: "{{baseUrl}}{{stage}}/admin/api/sales/sale"
+method: PATCH
+body:
+  type: json
+  content: |-
+    {
+        "sale_id": 692,
+        "patch_sale": true,
+        "patch_booking": true,
+        "patch_voucher": true,
+        "remark": "updated remark from test case 54321",
+        "unit": 2,
+        "discount_type": "fixed",
+        "discount_value": 20,
+        "final_amount": 80,
+        "payer_info": {"name": "ah gao 6", "email": "exp_act_6@gmail.com", "phone": 93324514, "payer_type": "guest"},
+        "sale_booking": [
+            {
+            "booking_id": 9,
+            "booking_code": "BKWC00002FSR",
+            "activity_name": "Updated booking name"
+            },
+            {
+            "booking_id": 6,
+            "booking_code": "BKWC00001FST",
+            "activity_name": "1hour Guided Funshoot Session - Modern Recurve"
+            }
+        ],
+        "sale_voucher": [
+            {
+            "voucher_id": 10,
+            },
+            {
+            "voucher_id": 11,
+            }
+        ]
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 4000

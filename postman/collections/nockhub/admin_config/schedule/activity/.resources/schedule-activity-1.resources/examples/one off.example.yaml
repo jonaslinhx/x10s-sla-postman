@@ -1,0 +1,38 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/admin/api/config/schedule/activity"
+  method: POST
+  body:
+    type: text
+    content: |-
+      {
+          "schedule_type": "one_off",
+          "activity_id": 7,
+          "location_id": 1,
+          "start_date": "2026-11-01",
+          "end_date": "2026-11-01",
+          "remark": "For Sunday extended timings one_off",
+          "activity_timing": [
+            {
+              "range_id": 1,
+              "start_hour": 20,
+              "end_hour": 21,
+              "num_lanes_block": 0,
+              "num_slots": 10
+            },
+            {
+              "range_id": 1,
+              "start_hour": 21,
+              "end_hour": 22,
+              "num_lanes_block": 0,
+              "num_slots": 10
+            }
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 2000

@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/admin/api/config/schedule/instructor"
+  method: POST
+  body:
+    type: text
+    content: |-
+      {
+          "schedule_type": "one_off",
+          "location_id": 1,
+          "start_date": "2025-07-01",
+          "end_date": "2025-07-03",
+          "remark": "Test instructor one-off schedule creation",
+          "instructor_timing": [
+            {
+              "instructor_id": 2,
+              "start_hour": 10,
+              "end_hour": 12,
+              "num_instructor": 2
+            },
+            {
+              "instructor_id": 1,
+              "start_hour": 14,
+              "end_hour": 16,
+              "num_instructor": 1
+            }
+          ]
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 2000

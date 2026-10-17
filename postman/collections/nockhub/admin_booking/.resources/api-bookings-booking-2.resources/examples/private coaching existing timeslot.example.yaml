@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/admin/api/bookings/booking"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "booing_mode": "direct",
+          "booking_code": "EV",
+          "comment": "postman private coaching existing timeslot",
+          "payment_mode": "credit",
+          "user_id": 16,     
+          "activity_id": 13, // Private Coaching (Recurve)
+          "date": "2025-09-10",
+          "start_hour": 10,
+          "end_hour": 11,
+          "availability_info": {
+              "range_id": 2,
+              "ra_id": [1022],
+              "ra_adjust": "lane",
+              "ra_by": 1
+              // get-availability (existing timeslot) for private does not provide ia
+          },
+          "activity_info": {
+              "credit_id": 3,
+              "num_lanes": 1,
+              "access_code": null
+          },
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 6000

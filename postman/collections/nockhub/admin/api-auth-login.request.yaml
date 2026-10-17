@@ -1,0 +1,18 @@
+$kind: http-request
+name: api/auth/login
+url: "{{baseUrl}}{{stage}}/admin/api/auth/login"
+method: POST
+headers:
+  - key: ""
+    value: ""
+    disabled: true
+body:
+  type: json
+  content: |-
+    {
+        
+    }
+auth:
+  type: noauth
+examples: ./.resources/api-auth-login.resources/examples
+order: 5000

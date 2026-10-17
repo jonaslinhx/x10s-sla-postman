@@ -1,0 +1,25 @@
+$kind: http-request
+name: api/config/activity
+url: "{{baseUrl}}{{stage}}/admin/api/config/activity"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "activity_type_id": 4,
+        "activity_name": "test post lesson activity",
+        "activity_code": "BCD",
+        "style_id": 3,
+        "description": "first line\nsecond line\nthird line",
+        "remark": "hello world",
+        "info": {
+          "credit_ids": [3],
+          "group_ids": [1,2]
+        }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 2000

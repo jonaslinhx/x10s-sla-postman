@@ -1,0 +1,62 @@
+$kind: http-request
+name: api/sales/sale
+url: "{{baseUrl}}{{stage}}/admin/api/sales/sale"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "sale_ref_prefix": "SY",
+      "create_by": "Westcoast",
+      "payment_method": "paynow_online",
+      "payment_platform": "hitpay",
+      "pkg_id": 12,
+      "payer_info": {
+        "payer_type": "existing",
+        "user_id": 1
+      },
+      "remark": "test post sale dialog",
+      "unit_price": 50.0,
+      "unit": 2,
+      "discount_type": "voucher",
+      "final_amount": 80.123,
+      "sale_booking": [
+        {
+          "booking_id": 2,
+          "booking_code": "BKWC99999MCC",
+          "activity_name": "test post sale dialog 1"
+        },
+        {
+          "booking_id": 3,
+          "booking_code": "BKWC99999RPS",
+          "activity_name": "test post sale dialog 2"
+        }
+      ],
+      "sale_voucher": [
+        {
+          "voucher_id": 3
+        },
+        {
+          "voucher_id": 4
+        }
+      ],
+      "range_pass": {
+        "pass_name": "some fake passs name",
+        "days_valid": 20,
+        "pass_start_date": "2025-02-10",
+        "location_ids": [2]
+      },
+      "credit": {
+        "credit_id": 1,
+        "quantity": 3,
+        "days_valid": 10,
+        "credit_start_date": "2025-02-10"
+      }
+    }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+examples: ./.resources/api-sales-sale-1.resources/examples
+order: 3000

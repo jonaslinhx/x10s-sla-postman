@@ -1,0 +1,35 @@
+$kind: http-request
+name: api/config/report
+url: "{{baseUrl}}{{stage}}/admin/api/config/report"
+method: POST
+body:
+  type: json
+  content: |-
+    // {
+    //     "report": "booking",
+    //     "filter": {
+    //         "start_date": "2026-01-01",
+    //         "end_date": "2026-08-31",
+    //         "activity_type_ids": [1]
+    //     }
+    // }
+
+    {
+        "report": "access",
+        "filter": {
+          "start_date": "2026-01-01",
+          "end_date": "2026-08-28",
+        //   "range_ids": [1,2],
+        //   "activity_type_ids": None,
+        //   "activity_ids": [3,4,5,6,7],
+          "paid": null,
+          "user_ids": [1,689]
+        }
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+examples: ./.resources/api-config-report.resources/examples
+order: 1000

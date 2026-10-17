@@ -1,0 +1,13 @@
+$kind: http-request
+name: api/config/club/credit
+url: "{{baseUrl}}{{stage}}/admin/api/config/club/credit"
+method: PATCH
+body:
+  type: text
+  content: '{"club_id":11,"credit_id":999999,"expire_on":"2026-12-31"}'
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 7000

@@ -1,0 +1,20 @@
+$kind: http-request
+name: api/users/user/score
+url: "{{baseUrl}}{{stage}}/admin/api/users/user/score"
+method: PATCH
+body:
+  type: json
+  content: |-
+    {
+        "score_id": 1,
+        "category_id": 2,
+        "score": 312,
+        "competition": "testing patch score",
+        "date": "2026-11-06"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 2000

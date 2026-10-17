@@ -1,0 +1,5 @@
+$kind: collection
+name: nockhub
+description: ""
+variables:
+  baseUrl: https://sla.nockhub.com

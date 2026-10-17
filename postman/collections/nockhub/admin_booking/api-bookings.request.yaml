@@ -1,0 +1,46 @@
+$kind: http-request
+name: api/bookings
+url: "{{baseUrl}}{{stage}}/admin/api/bookings?location_id=2&activity_type_ids=1&activity_type_ids=2&start_date=2026-01-11T15:24:11.657700&end_date=2026-01-15"
+method: GET
+queryParams:
+  - key: location_id
+    value: "2"
+  - key: activity_type_ids
+    value: "1"
+    description: Repeat multiple times to simulate List[int]
+  - key: activity_type_ids
+    value: "2"
+    description: 1 is experience, 2 is course
+  - key: activity_type_ids
+    value: "3"
+    disabled: true
+    description: 3 is practice
+  - key: activity_type_ids
+    value: "4"
+    disabled: true
+    description: 4 is lesson
+  - key: activity_type_ids
+    value: "5"
+    disabled: true
+    description: 5 is private
+  - key: activity_type_ids
+    value: "6"
+    disabled: true
+    description: 6 is advance
+  - key: start_date
+    value: 2026-01-11T15:24:11.657700
+    description: ensure isoformat friendly
+  - key: end_date
+    value: 2026-01-15
+  - key: range_ids
+    value: "1"
+    disabled: true
+  - key: range_ids
+    value: "2"
+    disabled: true
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 3000

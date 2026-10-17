@@ -1,0 +1,17 @@
+$kind: http-request
+name: schedule/range/availability
+url: "{{baseUrl}}{{stage}}/admin/api/config/schedule/range/availability"
+method: PATCH
+body:
+  type: json
+  content: |-
+    {
+        "ra_id": 1,  
+        "available_slots": 6
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 1000

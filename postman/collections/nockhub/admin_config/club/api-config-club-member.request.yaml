@@ -1,0 +1,13 @@
+$kind: http-request
+name: api/config/club/member
+url: "{{baseUrl}}{{stage}}/admin/api/config/club/member"
+method: POST
+body:
+  type: text
+  content: '{"club_id":12,"user_id":317 }'
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 8000

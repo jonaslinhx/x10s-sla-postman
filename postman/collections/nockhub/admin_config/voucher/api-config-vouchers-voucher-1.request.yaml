@@ -1,0 +1,31 @@
+$kind: http-request
+name: api/config/vouchers/voucher
+url: "{{baseUrl}}{{stage}}/admin/api/config/vouchers/voucher"
+method: POST
+body:
+  type: text
+  content: |-
+    {
+        "voucher_description": "test description from postman",
+        "voucher_code": "TESTCODE1234",
+        "discount_type": "fixed",
+        "discount_value": 10.23,
+        "apply_per_unit": true,
+        "max_redeem": 12,
+        "max_redeem_per_user": 2,
+        "start_date": "2025-01-01",
+        "end_date": "2025-02-28",
+        "pkg_ids": [1,2,3],
+        "activity_start_date": "2025-02-01",
+        "activity_end_date": "2025-02-01",
+        "location_ids": [1,2],
+        "min_units_per_sale": 1,
+        "max_units_per_sale": 3,
+        "remark": "test remark"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 3000

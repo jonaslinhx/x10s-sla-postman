@@ -1,0 +1,43 @@
+$kind: http-request
+name: api/booking
+url: "{{baseUrl}}{{stage}}/guest/api/booking"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "activity_id": 3,
+        "location_id": 1,
+        "pkg_id": 12, // 10 to 15
+        "applied_codes": ["XZXFLV0UT7UD"],
+        "num_child": 3,
+        "num_adult": 3,
+        "participants": [{
+            "name": "Different Voucher",
+            "ext": "+65",
+            "phone": "91231234",
+            "email": "juggare@outlook.com"
+        }],
+        "sessions": [{
+            "date": "2025-03-22",
+            "start_hour": 10,
+            "end_hour": 11,
+            "availability_info": {
+                "range_id": 1,
+                "ra_id": [101],
+                "ra_by": 3,
+                "ra_adjust": "lane",
+                "ia_id": [101],
+                "ia_by": 1
+            }
+        }],
+        "amount": 170.50,
+        "payment_method": "paynow_online",
+        "payment_platform": "hitpay"
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 8000

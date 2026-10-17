@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/admin/api/bookings/booking"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "booing_mode": "direct",
+          "booking_code": "EV",
+          "comment": "postman private event new timeslot",
+          "payment_mode": "sale_order",
+          "user_id": 12,     
+          "activity_id": 17, // Private Event (Kyudo)
+          "date": "2025-09-11", // tue
+          "start_hour": 19,
+          "end_hour": 21,
+          "new_timeslot": {
+              "range_id": 2,
+              "num_instructors": 0
+              // (new timeslot) we identify the ia based on activity's style_id
+          },
+          "activity_info": {
+              "credit_id": null,
+              "num_lanes": 5,
+              "access_code": "KYUDOHUAT"
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 7000

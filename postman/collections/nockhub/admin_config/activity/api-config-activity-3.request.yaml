@@ -1,0 +1,16 @@
+$kind: http-request
+name: api/config/activity
+url: "{{baseUrl}}{{stage}}/admin/api/config/activity"
+method: DELETE
+body:
+  type: json
+  content: |-
+    {
+        "activity_id": 27
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 4000

@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/admin/api/bookings/booking"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "booing_mode": "direct",
+          "booking_code": "EV",
+          "comment": "postman practice existing timeslot",
+          "payment_mode": "sale_order",
+          "user_id": 10,
+          "activity_id": 1,
+          "date": "2025-01-30", 
+          "start_hour": 10,
+          "end_hour": 12,
+          "availability_info": {
+              "range_id": 2,
+              "ra_id": [518,519],
+              "ra_adjust": "lane",
+              "ra_by": 3,
+              "ia_by": 1,
+              "ia_id": [30, 51]
+          },
+          "activity_info": {
+              "num_adult": 3,
+              "num_child": 2,
+              "name": "james",
+              "email": "landy@gmail.com",
+              "phone": "123819203"
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 3000

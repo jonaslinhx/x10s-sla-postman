@@ -1,0 +1,42 @@
+$kind: http-request
+name: api/availability
+url: "{{baseUrl}}{{stage}}/admin/api/availability?activity_id=4&start_date=2025-03-14&end_date=2026-03-14&location_id=1&num_pax=3&interval=2"
+method: GET
+queryParams:
+  - key: activity_id
+    value: "4"
+    description: 1 FSR, 4 BAR,  7 RPS, 8 JYR, 9JYC, 10 MCR, 13PCR, 18 IAR, 14 PCC, 16 PER
+  - key: start_date
+    value: 2025-03-14
+  - key: end_date
+    value: 2026-03-14
+  - key: location_id
+    value: "1"
+    description: experience, course, advance, lesson
+  - key: num_pax
+    value: "3"
+    description: experience, course, advance
+  - key: interval
+    value: "2"
+    description: experience, course, advance
+  - key: range_id
+    value: "4"
+    disabled: true
+    description: practice, private
+  - key: num_lanes
+    value: "1"
+    disabled: true
+    description: private
+  - key: overwrite
+    value: "True"
+    disabled: true
+    description: True to display outdated dates and timeslots
+  - key: include_today_current_hour
+    value: "False"
+    disabled: true
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 2000

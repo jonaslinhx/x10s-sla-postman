@@ -1,0 +1,21 @@
+$kind: http-example
+name: GET api/misc/auth (check JWT)
+request:
+  url: "{{baseUrl}}{{stage}}/admin/api/misc/auth"
+  method: GET
+  headers:
+    - key: ""
+      value: ""
+      disabled: true
+  queryParams:
+    - key: access_key
+      value: "{{accessKey}}"
+      disabled: true
+      description: URL-Safe Base 64. Normal base64 turns '+' to ' ' Disable to authenticate JWT
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

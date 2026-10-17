@@ -1,0 +1,16 @@
+$kind: http-request
+name: api/sales/sale
+url: "{{baseUrl}}{{stage}}/admin/api/sales/sale?sale_id=130"
+method: GET
+queryParams:
+  sale_id: "130"
+body:
+  type: json
+  content: ""
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+settings: {}
+order: 2000

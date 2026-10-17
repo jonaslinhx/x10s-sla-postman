@@ -1,0 +1,14 @@
+$kind: http-request
+name: api/hitpay - webhook
+url: "{{baseUrl}}{{stage}}/guest/api/hitpay"
+method: POST
+headers:
+  - key: Content-Type
+    value: application/x-www-form-urlencoded
+    disabled: true
+body:
+  type: text
+  content: payment_id=9e15ec50-7204-401b-a528-c050e19a7d90&payment_request_id=9e15ec43-13d9-443c-a1ed-a6e25a140c6a&phone=91231234&amount=15.50&currency=SGD&status=completed&reference_number=2025-01-30T00%3A59%3A12Z&hmac=3876f98d6684a8a8f134474857cd0b6d6994a29db7656544eac5f2fca003728f
+auth:
+  type: noauth
+order: 7000

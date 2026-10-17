@@ -1,0 +1,38 @@
+$kind: http-request
+name: schedule/activity
+url: "{{baseUrl}}{{stage}}/admin/api/config/schedule/activity"
+method: POST
+body:
+  type: text
+  content: |-
+    {
+        "schedule_type": "one_off",
+        "activity_id": 7,
+        "location_id": 1,
+        "start_date": "2026-01-11",
+        "end_date": "2026-01-11",
+        "remark": "For Sunday extended timings one_off",
+        "activity_timing": [
+          {
+            "range_id": 1,
+            "start_hour": 20,
+            "end_hour": 21,
+            "num_lanes_block": 0,
+            "num_slots": 10
+          },
+          {
+            "range_id": 1,
+            "start_hour": 21,
+            "end_hour": 22,
+            "num_lanes_block": 0,
+            "num_slots": 10
+          }
+        ]
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+examples: ./.resources/schedule-activity-1.resources/examples
+order: 2000

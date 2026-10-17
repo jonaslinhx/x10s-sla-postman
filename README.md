@@ -3,8 +3,13 @@
 Postman collection for the x10s SLA API (`member`, `access`, `guest`, `admin` Lambdas).
 
 **Git is the source of truth.** The Postman app is linked to this folder via
-`.postman/resources.yaml` and reads/writes `postman.json` directly. Edit in
-Postman, then commit here.
+`.postman/resources.yaml` and reads/writes everything under `postman/`
+(Postman's fixed layout). Edit in Postman, then commit here.
+
+```
+postman/collections/nockhub/   ← the collection, one YAML file per request
+postman/environments/          ← x10s dev / x10s prod
+```
 
 ## Secrets
 
@@ -30,13 +35,12 @@ login response or set it in your environment.
 | `stage` | `postman/environments/x10s dev` | `/dev` → `https://sla.nockhub.com/dev/member/...` |
 | `stage` | `postman/environments/x10s prod` | `''` → `https://sla.nockhub.com/member/...` |
 
-`postman/` is managed by the Postman app — edits in Postman are written here.
 Pick **x10s dev** or **x10s prod** from the environment dropdown. Careful on
 prod — POST/PATCH/DELETE hit live data.
 
 ## Before committing
 
-Make sure Postman hasn't written a real key back into the file:
+Make sure no real key or password was saved into a request:
 
 ```sh
 git diff | grep -iE 'x-api-key|password|secret' -A2

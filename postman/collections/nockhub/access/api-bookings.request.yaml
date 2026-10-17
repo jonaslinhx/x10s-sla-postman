@@ -1,0 +1,18 @@
+$kind: http-request
+name: api/bookings
+url: "{{baseUrl}}{{stage}}/access/api/bookings?user_id=4&start_date=2026-01-28T06:20:03.119&end_date=2026-01-28T06:20:03.119"
+method: GET
+queryParams:
+  - key: user_id
+    value: "4"
+  - key: start_date
+    value: 2026-01-28T06:20:03.119
+    description: test isoformat friendliness
+  - key: end_date
+    value: 2026-01-28T06:20:03.119
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 6000

@@ -1,0 +1,14 @@
+$kind: http-request
+name: api/config/activity
+url: "{{baseUrl}}{{stage}}/admin/api/config/activity"
+method: GET
+body:
+  type: text
+  content: ""
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+settings: {}
+order: 1000

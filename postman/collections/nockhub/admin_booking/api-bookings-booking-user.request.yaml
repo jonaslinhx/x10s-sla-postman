@@ -1,0 +1,12 @@
+$kind: http-request
+name: api/bookings/booking/user
+url: "{{baseUrl}}{{stage}}/admin/api/bookings/booking/user?user_id=711"
+method: GET
+queryParams:
+  user_id: "711"
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 6000

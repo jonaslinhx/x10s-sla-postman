@@ -1,0 +1,16 @@
+$kind: http-request
+name: api/config/club
+url: "{{baseUrl}}{{stage}}/admin/api/config/club"
+method: DELETE
+body:
+  type: text
+  content: |-
+    {
+        "club_id": 35
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+order: 5000
