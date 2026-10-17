@@ -4871,7 +4871,7 @@
                   "apikey": [
                     {
                       "key": "value",
-                      "value": "{{auth_secret_13kn}}",
+                      "value": "{{vault:x10s-api-key}}",
                       "type": "string"
                     },
                     {
@@ -4923,7 +4923,7 @@
                   "apikey": [
                     {
                       "key": "value",
-                      "value": "{{auth_secret_13kn}}",
+                      "value": "{{vault:x10s-api-key}}",
                       "type": "string"
                     },
                     {
@@ -4980,7 +4980,7 @@
                   "apikey": [
                     {
                       "key": "value",
-                      "value": "{{auth_secret_13kn}}",
+                      "value": "{{vault:x10s-api-key}}",
                       "type": "string"
                     },
                     {
@@ -5025,7 +5025,7 @@
                   "apikey": [
                     {
                       "key": "value",
-                      "value": "{{auth_secret_13kn}}",
+                      "value": "{{vault:x10s-api-key}}",
                       "type": "string"
                     },
                     {
@@ -5342,7 +5342,7 @@
                 },
                 {
                   "key": "value",
-                  "value": "{{auth_secret_13kn}}",
+                  "value": "{{vault:x10s-api-key}}",
                   "type": "string"
                 }
               ]
@@ -6122,10 +6122,6 @@
     {
       "key": "baseUrl",
       "value": "https://sla.nockhub.com"
-    },
-    {
-      "key": "auth_secret_13kn",
-      "secret": true
     }
   ]
 }
