@@ -5,6 +5,3 @@ workspace:
 localResources:
   collections:
     - ../postman.json
-  environments:
-    - ../environments/dev.postman_environment.json
-    - ../environments/prod.postman_environment.json
