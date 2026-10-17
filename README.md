@@ -27,13 +27,12 @@ login response or set it in your environment.
 | Variable | Where | Value |
 |---|---|---|
 | `baseUrl` | collection | `https://sla.nockhub.com` |
-| `stage` | `environments/dev` | `/dev` → `https://sla.nockhub.com/dev/member/...` |
-| `stage` | `environments/prod` | `""` → `https://sla.nockhub.com/member/...` |
+| `stage` | `postman/environments/x10s dev` | `/dev` → `https://sla.nockhub.com/dev/member/...` |
+| `stage` | `postman/environments/x10s prod` | `''` → `https://sla.nockhub.com/member/...` |
 
-Environments aren't auto-synced from this folder. Postman → **Import** → select
-both files in `environments/` (once, or again after changing them). Then pick
-**x10s dev** or **x10s prod** from the environment dropdown. Careful on prod —
-POST/PATCH/DELETE hit live data.
+`postman/` is managed by the Postman app — edits in Postman are written here.
+Pick **x10s dev** or **x10s prod** from the environment dropdown. Careful on
+prod — POST/PATCH/DELETE hit live data.
 
 ## Before committing
 
