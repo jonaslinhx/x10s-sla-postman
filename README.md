@@ -15,8 +15,9 @@ your machine, never synced to the cloud). Add these in Postman → Vault:
 |---|---|
 | `x10s-api-key` | `x-api-key` header on all x10s requests |
 | `hitpay-sandbox-api-key` | `guest / (hitpay) payment-requests` |
-| `member-login-email`, `member-login-password` | `admin / api/auth/login` → "member login" example |
-| `admin-login-username`, `admin-login-password` | `admin / api/auth/login` → "admin login" example |
+
+The `api/auth/login` examples use `<email>` / `<username>` / `<password>`
+placeholders — type real credentials when testing, but don't save them.
 
 `{{accessKey}}` (used in `api/misc/auth`) is a session value — paste it from a
 login response or set it in your environment.

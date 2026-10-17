@@ -1817,7 +1817,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"portal\": \"member\",\n    \"email\": \"{{vault:member-login-email}}\",\n    \"password\": \"{{vault:member-login-password}}\"\n}",
+                  "raw": "{\n    \"portal\": \"member\",\n    \"email\": \"<email>\",\n    \"password\": \"<password>\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -1856,7 +1856,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"portal\": \"admin\",\n    \"username\": \"{{vault:admin-login-username}}\",\n    \"password\": \"{{vault:admin-login-password}}\"\n}",
+                  "raw": "{\n    \"portal\": \"admin\",\n    \"username\": \"<username>\",\n    \"password\": \"<password>\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
