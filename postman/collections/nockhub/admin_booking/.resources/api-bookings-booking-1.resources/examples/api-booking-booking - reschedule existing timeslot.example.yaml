@@ -1,7 +1,7 @@
 $kind: http-example
 name: api/booking/booking - reschedule existing timeslot
 request:
-  url: "{{baseUrl}}/admin/api/bookings/booking"
+  url: "{{baseUrl}}{{stage}}/admin/api/bookings/booking"
   method: PATCH
   body:
     type: json

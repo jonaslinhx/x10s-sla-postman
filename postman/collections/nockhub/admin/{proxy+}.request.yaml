@@ -1,4 +1,4 @@
 $kind: http-request
 url: "{{baseUrl}}{{stage}}/admin/api"
 method: OPTIONS
-order: 1000
+order: 500

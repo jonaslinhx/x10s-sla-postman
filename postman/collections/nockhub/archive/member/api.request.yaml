@@ -1,5 +1,5 @@
 $kind: http-request
-name: api (to be deprecated?)
+name: api
 url: "{{baseUrl}}{{stage}}/member/api?email=test_ba@gmail.com&phone=123"
 method: GET
 queryParams:
@@ -10,4 +10,4 @@ auth:
   credentials:
     value: "{{vault:x10s-api-key}}"
     key: x-api-key
-order: 2000
+order: 1000

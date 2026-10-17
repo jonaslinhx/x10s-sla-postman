@@ -1,4 +1,4 @@
 $kind: http-request
-url: "{{baseUrl}}/guest/api"
+url: "{{baseUrl}}{{stage}}/guest/api"
 method: OPTIONS
 order: 1000

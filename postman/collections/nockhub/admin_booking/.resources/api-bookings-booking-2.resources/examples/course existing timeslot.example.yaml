@@ -1,6 +1,6 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/admin/api/bookings/booking"
+  url: "{{baseUrl}}{{stage}}/admin/api/bookings/booking"
   method: POST
   body:
     type: json

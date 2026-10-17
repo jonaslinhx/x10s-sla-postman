@@ -1,6 +1,6 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/admin/api/config/schedule/instructor"
+  url: "{{baseUrl}}{{stage}}/admin/api/config/schedule/instructor"
   method: PATCH
   body:
     type: text
