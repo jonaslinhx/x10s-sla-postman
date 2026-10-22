@@ -1,0 +1,39 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/hall-of-fame?board=competition&period=all-time"
+  method: GET
+  queryParams:
+    - key: board
+      value: competition
+    - key: period
+      value: all-time
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+    Cache-Control: public, max-age=900
+  body:
+    type: json
+    content: |-
+      {
+          "board": "competition",
+          "period": "all-time",
+          "categories": [
+              {
+                  "category_id": 3,
+                  "rows": [
+                      {"rank": 1, "name": "Archer One", "score": 634, "competition": "Club Championship", "date": "2026-06-18"},
+                      {"rank": 2, "name": "Archer Two", "score": 612, "competition": "Spring Open", "date": "2026-03-07"},
+                      {"rank": 2, "name": "Archer Three", "score": 612, "competition": "Club Championship", "date": "2026-06-18"}
+                  ]
+              },
+              {
+                  "category_id": 5,
+                  "rows": [
+                      {"rank": 1, "name": "Archer Four", "score": 548, "competition": "Indoor Series Round 1", "date": "2025-11-22"}
+                  ]
+              }
+          ]
+      }
+order: 2000

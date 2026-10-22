@@ -1,0 +1,23 @@
+$kind: http-request
+name: api/hall-of-fame
+description: "Hall of Fame top 10 — same list for every member (no `user_id`). Both query params required; missing/invalid → 400. `board`: `training` or `competition`. `period`: `{year}-Q{n}` (e.g. `2026-Q4`) or `all-time` — no server default, the app sends the current quarter. Ties share a rank (`RANK()`), so everyone tied at 10th is returned. Training: `rows` of {rank, name, sessions}, sessions = distinct sign-in days in the period, all members (no opt-out). Competition: `categories` of {category_id, rows}, each row the member's verified personal best in that category {rank, name, score, competition, date}; opted-in scores only, and only categories with ≥1 score appear. 200 → `Cache-Control: public, max-age=900` (CloudFront edge cache keyed on board + period); errors → `no-store`. Toggle the disabled params to switch board/period."
+url: "{{baseUrl}}{{stage}}/member/api/hall-of-fame?board=training&period=2026-Q4"
+method: GET
+queryParams:
+  - key: board
+    value: training
+  - key: board
+    value: competition
+    disabled: true
+  - key: period
+    value: 2026-Q4
+  - key: period
+    value: all-time
+    disabled: true
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+examples: ./.resources/api-hall-of-fame.resources/examples
+order: 3500

@@ -1,0 +1,36 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/hall-of-fame?board=training&period=2026-Q4"
+  method: GET
+  queryParams:
+    - key: board
+      value: training
+    - key: period
+      value: 2026-Q4
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+    Cache-Control: public, max-age=900
+  body:
+    type: json
+    content: |-
+      {
+          "board": "training",
+          "period": "2026-Q4",
+          "rows": [
+              {"rank": 1, "name": "Archer One", "sessions": 28},
+              {"rank": 2, "name": "Archer Two", "sessions": 24},
+              {"rank": 3, "name": "Archer Three", "sessions": 21},
+              {"rank": 4, "name": "Archer Four", "sessions": 19},
+              {"rank": 5, "name": "Archer Five", "sessions": 17},
+              {"rank": 6, "name": "Archer Six", "sessions": 15},
+              {"rank": 7, "name": "Archer Seven", "sessions": 12},
+              {"rank": 8, "name": "Archer Eight", "sessions": 10},
+              {"rank": 9, "name": "Archer Nine", "sessions": 9},
+              {"rank": 10, "name": "Archer Ten", "sessions": 8},
+              {"rank": 10, "name": "Archer Eleven", "sessions": 8}
+          ]
+      }
+order: 1000

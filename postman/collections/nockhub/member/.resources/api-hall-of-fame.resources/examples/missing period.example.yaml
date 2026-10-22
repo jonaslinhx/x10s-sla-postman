@@ -1,0 +1,21 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/hall-of-fame?board=training"
+  method: GET
+  queryParams:
+    - key: board
+      value: training
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Content-Type: application/json
+    Cache-Control: no-store
+  body:
+    type: json
+    content: |-
+      {
+          "error": "1 validation error for GetHallOfFame\nperiod\n  Field required [type=missing, input_value={'board': 'training'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+          "metadata": {}
+      }
+order: 3000
