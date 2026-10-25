@@ -1,0 +1,166 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/user?user_id=7470&fields=catalog"
+  method: GET
+  headers:
+    x-r-pass: "true"
+    x-r-credit: "true"
+  queryParams:
+    - key: user_id
+      value: "7470"
+    - key: fields
+      value: catalog
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "message": "user_id 7470",
+          "user": null,
+          "credits": [],
+          "credit_transactions": [],
+          "sales": [],
+          "bookings": [],
+          "scores": [],
+          "passes": [],
+          "lockers": [],
+          "announcements": [],
+          "activity_history": {},
+          "activities": [],
+          "alerts": [],
+          "access": {},
+          "catalog": {
+              "pass": [
+                  {
+                      "pkg_id": 12,
+                      "name": "30D West Coast Pass",
+                      "description": null,
+                      "price": 165.0,
+                      "price_type": "regular",
+                      "package_type": "pass_credit",
+                      "info": {
+                          "pass": {
+                              "pass_name": "30D West Coast Pass",
+                              "location_ids": [
+                                  1
+                              ],
+                              "days_valid": 30
+                          }
+                      },
+                      "renewal_discount": {
+                          "percent": 10,
+                          "start_by": "2026-11-14"
+                      }
+                  }
+              ],
+              "credit": [
+                  {
+                      "pkg_id": 20,
+                      "name": "10 Range Practice Credits",
+                      "description": null,
+                      "price": 45.0,
+                      "price_type": "regular",
+                      "package_type": "pass_credit",
+                      "info": {
+                          "credit": {
+                              "credit_id": 2,
+                              "quantity": 10,
+                              "days_valid": 90
+                          }
+                      },
+                      "renewal_discount": null
+                  }
+              ],
+              "locker": [
+                  {
+                      "pkg_id": 25,
+                      "name": "90D West Coast Storage Pass",
+                      "description": null,
+                      "price": 90.0,
+                      "price_type": "regular",
+                      "package_type": "pass_credit",
+                      "info": {
+                          "locker": {
+                              "locker_name": "90D West Coast Storage",
+                              "location_ids": [
+                                  1
+                              ],
+                              "days_valid": 90
+                          }
+                      },
+                      "renewal_discount": {
+                          "percent": 10,
+                          "start_by": "2026-11-14"
+                      }
+                  }
+              ],
+              "combo": [
+                  {
+                      "pkg_id": 31,
+                      "name": "30D West Coast + 10 RP",
+                      "description": null,
+                      "price": 80.0,
+                      "price_type": "regular",
+                      "package_type": "pass_credit",
+                      "info": {
+                          "pass": {
+                              "pass_name": "30D West Coast Pass",
+                              "location_ids": [
+                                  1
+                              ],
+                              "days_valid": 30
+                          },
+                          "credit": {
+                              "credit_id": 2,
+                              "quantity": 10,
+                              "days_valid": 90
+                          }
+                      },
+                      "renewal_discount": null
+                  }
+              ],
+              "activity": [
+                  {
+                      "pkg_id": 44,
+                      "name": "Field Shooting",
+                      "description": "Intro to field shooting.",
+                      "price": 60.0,
+                      "price_type": "regular",
+                      "package_type": "activity",
+                      "info": {
+                          "activity_id": 21,
+                          "location_ids": [
+                              1,
+                              2
+                          ],
+                          "num_sess": 1,
+                          "sess_dur": 1
+                      },
+                      "renewal_discount": null
+                  }
+              ],
+              "club": [
+                  {
+                      "pkg_id": 50,
+                      "name": "Club 10 RP",
+                      "description": null,
+                      "price": 400.0,
+                      "price_type": "regular",
+                      "package_type": "club",
+                      "info": {
+                          "credit": {
+                              "credit_id": 2,
+                              "quantity": 10,
+                              "days_valid": 90
+                          }
+                      },
+                      "renewal_discount": null
+                  }
+              ]
+          }
+      }
+order: 4000

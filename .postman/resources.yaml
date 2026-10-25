@@ -1,9 +1,8 @@
-# Use this workspace to collaborate
-workspace:
-  id: 2744d549-2d56-4e88-a5ce-09b0d97e6c90
-
-# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
-
 cloudResources:
   collections:
-    ../postman/collections/nockhub: 6c0faf41-96d4-430f-8753-d172275f647f
+    ../postman/collections/nockhub: 36836498-a86a1b02-6a07-4d2b-9db8-92c5e9bdf4ee
+  environments:
+    ../postman/environments/x10s dev.environment.yaml: 36836498-b42851f4-8cbb-4f2d-a9cc-8e958f983f70
+    ../postman/environments/x10s prod.environment.yaml: 36836498-4dd72517-dc0e-4cf7-85e7-6ad85ec683d3
+workspace:
+  id: 2744d549-2d56-4e88-a5ce-09b0d97e6c90
