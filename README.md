@@ -2,14 +2,38 @@
 
 Postman collection for the x10s SLA API (`member`, `access`, `guest`, `admin` Lambdas).
 
-**Git is the source of truth.** The Postman app is linked to this folder via
-`.postman/resources.yaml` and reads/writes everything under `postman/`
-(Postman's fixed layout). Edit in Postman, then commit here.
+**Git is the source of truth.** `.postman/resources.yaml` maps the files under
+`postman/` (Postman's fixed layout) to the cloud workspace **x10s-sla**. The
+Postman app shows the **cloud** copy, so file changes only appear in the app
+after `postman workspace push`, and edits made in the app only reach the repo
+after `postman workspace pull`.
 
 ```
 postman/collections/nockhub/   ← the collection, one YAML file per request
 postman/environments/          ← x10s dev / x10s prod
 ```
+
+## Common commands
+
+Postman CLI (`postman`), run from the repo root. Log in once with `postman login`.
+
+| Task | Command |
+|---|---|
+| Check the collection files for errors | `postman collection lint postman/collections/nockhub` |
+| Preview what differs between repo and cloud (read-only) | `postman workspace diff` |
+| Send repo changes to the app (cloud) | `postman workspace prepare` then `postman workspace push` |
+| Bring edits made in the app into the repo | `postman workspace pull`, then review `git diff` and commit |
+| List cloud collections / environments | `postman collection list -w 2744d549-2d56-4e88-a5ce-09b0d97e6c90` / `postman environment list -w 2744d549-2d56-4e88-a5ce-09b0d97e6c90` |
+
+Typical loop after editing request YAML here: `lint` → `diff` → `push` → commit.
+After editing in the app: `pull` → review → commit.
+
+- `push` rewrites `.postman/resources.yaml` when it creates or remaps cloud
+  objects. Commit that file with your change.
+- **Never** `push --push-strategy force-sync` unless you mean it: it deletes every
+  cloud item that has no file here (currently the WORKSPACE-README document).
+- `diff` always shows `nockhub  update` with `moved from member / api-user / …`
+  lines. That's file names vs request names, not a real change.
 
 ## Secrets
 
