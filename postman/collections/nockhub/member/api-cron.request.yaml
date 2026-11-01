@@ -1,0 +1,14 @@
+$kind: http-request
+name: api/cron
+url: "{{baseUrl}}{{stage}}/member/api/cron"
+method: POST
+body:
+  type: json
+  content: |-
+    {"usecase": "sweep_pending_reserves"}
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{vault:x10s-api-key}}"
+order: 8000
