@@ -1,0 +1,22 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/payment?user_id=3015&reserve_id=1&payment_id=1"
+  method: GET
+  queryParams:
+    user_id: "3015"
+    reserve_id: "1"
+    payment_id: "1"
+response:
+  statusCode: 404
+  statusText: Not Found
+  headers:
+    Content-Type: application/json
+    Access-Control-Allow-Origin: "*"
+  body:
+    type: json
+    content: |-
+      {
+          "error": "issue finding reserve_id 1 and payment_id 1 for user_id 3015",
+          "metadata": {}
+      }
+order: 3000

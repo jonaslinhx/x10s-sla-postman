@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/payment"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "user_id": 3015,
+          "pkg_id": 44,
+          "activity_id": 21,
+          "location_id": 1,
+          "sessions": [{
+              "date": "2026-11-10",
+              "start_hour": 9,
+              "end_hour": 10,
+              "availability_info": {
+                  "range_id": 1,
+                  "ra_id": [3],
+                  "ra_by": 1,
+                  "ra_adjust": "lane",
+                  "ia_id": [3],
+                  "ia_by": 1
+              }
+          }],
+          "amount": 60.00,
+          "payment_method": "card",
+          "reserve_id": null,
+          "payment_request_id": null
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+    Access-Control-Allow-Origin: "*"
+  body:
+    type: json
+    content: |-
+      {
+          "message": "payment request created",
+          "url": "https://securecheckout.sandbox.hit-pay.com/payment-request/@example/00000000-0000-4000-8000-000000000009/checkout",
+          "reserve_id": 7,
+          "expire_on": "2026-11-02T14:20:00+08:00",
+          "payment_id": 3,
+          "hitpay_id": 4,
+          "payment_request_id": "00000000-0000-4000-8000-000000000009",
+          "amount": 60.0
+      }
+order: 1000

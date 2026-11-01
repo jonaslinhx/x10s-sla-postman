@@ -1,0 +1,38 @@
+$kind: http-request
+name: api/payment
+description: "Member pays for a paid (advance) activity from the Shop (04a). The archer is `user_id` in the body (API key only, as get-user / post-access). `sessions` is guest's exact SessionModel (ISO `date`, `availability_info` with `ia_id` / `ia_by`), one per the activity's `num_sess`; one participant, the member (details filled from the DB). No vouchers (no `applied_codes`). Checks, in order, before any write or HitPay call: `pkg_id` is the archer's catalog variant, category `activity` → else **409** \"This package is no longer available\"; the package's `activity_id` matches, `len(sessions) == num_sess`, each session `sess_dur` hours, `location_id` is one of the activity's → else **400**; no overlap between the picked sessions or with the member's bookings → else **409** naming the date/time; server price vs `amount` (compared only, never charged) → else **409** \"The price has changed…\" with `metadata.amount` = the server's figure (how the app tells it from the other 409s); slots still free → else **409** \"slot no longer available\". Unknown `user_id` → 404. Paid: holds the slots for 10 min and returns guest's keys (`url`, `reserve_id`, `expire_on`, `payment_id`, `hitpay_id`, `payment_request_id`) plus `amount`; the app opens the HitPay drop-in, then polls `api/payment - status`. **$0 total → free booking**: no reserve or HitPay request; books now and returns `status: completed` with `sale_id` / `booking_id` / `booking_ids` (no `url`). Re-Proceed: send the previous response's `reserve_id` + `payment_request_id` together (one without the other → 400)."
+url: "{{baseUrl}}{{stage}}/member/api/payment"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "user_id": 3015,
+        "pkg_id": 44,
+        "activity_id": 21,
+        "location_id": 1,
+        "sessions": [{
+            "date": "2026-11-10",
+            "start_hour": 9,
+            "end_hour": 10,
+            "availability_info": {
+                "range_id": 1,
+                "ra_id": [3],
+                "ra_by": 1,
+                "ra_adjust": "lane",
+                "ia_id": [3],
+                "ia_by": 1
+            }
+        }],
+        "amount": 60.00,
+        "payment_method": "card",
+        "reserve_id": null,
+        "payment_request_id": null
+    }
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+examples: ./.resources/api-payment.resources/examples
+order: 9000

@@ -1,0 +1,50 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/payment"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "user_id": 3015,
+          "pkg_id": 45,
+          "activity_id": 21,
+          "location_id": 1,
+          "sessions": [{
+              "date": "2026-11-10",
+              "start_hour": 9,
+              "end_hour": 10,
+              "availability_info": {
+                  "range_id": 1,
+                  "ra_id": [3],
+                  "ra_by": 1,
+                  "ra_adjust": "lane",
+                  "ia_id": [3],
+                  "ia_by": 1
+              }
+          }],
+          "amount": 0,
+          "payment_method": "card",
+          "reserve_id": null,
+          "payment_request_id": null
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+    Access-Control-Allow-Origin: "*"
+  body:
+    type: json
+    content: |-
+      {
+          "status": "completed",
+          "message": "A confirmation email has been sent to member@example.com.",
+          "amount": 0.0,
+          "sale_id": 600,
+          "booking_id": 901,
+          "booking_ids": [901]
+      }
+order: 2000

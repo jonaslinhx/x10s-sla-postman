@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}{{stage}}/member/api/payment?user_id=3015&reserve_id=1&payment_id=1"
+  method: GET
+  queryParams:
+    user_id: "3015"
+    reserve_id: "1"
+    payment_id: "1"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+    Access-Control-Allow-Origin: "*"
+  body:
+    type: json
+    content: |-
+      {
+          "message": "A confirmation email has been sent to member@example.com.",
+          "status": "completed",
+          "sale_id": 600,
+          "booking_id": 901,
+          "booking_ids": [901]
+      }
+order: 2000

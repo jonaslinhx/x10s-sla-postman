@@ -1,0 +1,16 @@
+$kind: http-request
+name: api/payment - status
+description: "Member app's poll after the HitPay drop-in (3 s for the first minute, then 10 s until `expire_on`, then \"still pending\"). All three query params required. **404** unless the reserve + payment pair belongs to `user_id`. Otherwise runs the shared `confirm_payment` (asks HitPay at most every 15 s) and returns `status` `pending | completed | failed | expired` with a `message`; a locked reserve or paid-but-booking-failed reads `pending`. On `completed` also `sale_id`, `booking_id` (first session) and `booking_ids` (one per session). Not used for a $0 free booking — POST already returns `completed`."
+url: "{{baseUrl}}{{stage}}/member/api/payment?user_id=3015&reserve_id=1&payment_id=1"
+method: GET
+queryParams:
+  user_id: "3015"
+  reserve_id: "1"
+  payment_id: "1"
+auth:
+  type: apikey
+  credentials:
+    value: "{{vault:x10s-api-key}}"
+    key: x-api-key
+examples: ./.resources/api-payment - status.resources/examples
+order: 9500
