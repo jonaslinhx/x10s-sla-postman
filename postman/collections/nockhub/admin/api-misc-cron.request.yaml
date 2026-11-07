@@ -11,9 +11,16 @@ body:
     // {"usecase": "delete_expired_pass"}
     // {"usecase": "credits_expiry_email"}
     // {"usecase": "deduct_expired_credits"}
-auth:
-  type: apikey
-  credentials:
-    key: x-api-key
+headers:
+  # Still required on prod until the IAM cron change is released there; ignored on dev.
+  - key: x-api-key
     value: "{{vault:x10s-api-key}}"
+auth:
+  type: awsv4
+  credentials:
+    accessKey: "{{vault:aws-access-key-id}}"
+    secretKey: "{{vault:aws-secret-access-key}}"
+    sessionToken: "{{vault:aws-session-token}}"
+    region: ap-southeast-1
+    service: execute-api
 order: 2000
